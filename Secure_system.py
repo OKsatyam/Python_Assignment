@@ -93,7 +93,8 @@ def verify_password(password) :
     check_username=consecutive_username_letters(password)
     if lenght>=10 and  upper_count>1 and lower_count>1 and digit_count>1 and Scharacter_count>1 and check_consicutiveletters==True and pervious_passwordcheck==True and check_username==True:
         return True
-    
+    if(lenght<10):
+        print("Your password is too short")
 
 def condition_verification(password):
     print('Enter your password:')
@@ -101,6 +102,7 @@ def condition_verification(password):
     check=verify_password(password)
     if(check==True):
         password_list.append(password)
+        print("Password Has Been Saved") 
         return password
     else:
      retry=condition_verification(password)
